@@ -2,7 +2,9 @@
 /vim/backup/*
 /vim/dein/.cache/*
 /vim/dein/repos/*
+/vim/dein/cache_vi
 /vim/dein/cache_vim
+/vim/dein/state_vi.vim
 /vim/dein/state_vim.vim
 /bash/.bashrc_local
 

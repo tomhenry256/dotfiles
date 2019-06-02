@@ -1,0 +1,144 @@
+# dein
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# 非同期処理
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+#hook_post_update = '''
+#  if dein#util#_is_windows()
+#    let cmd = 'tools\\update-dll-mingw'
+#  elseif dein#util#_is_cygwin()
+#    let cmd = 'make -f make_cygwin.mak'
+#  elseif executable('gmake')
+#    let cmd = 'gmake'
+#  else
+#    let cmd = 'make'
+#  endif
+#  let g:dein#plugin.build = cmd
+#'''
+# ファイル操作
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+# 検索高速化
+[[plugins]]
+repo = 'rking/ag.vim'
+
+# vim で git command
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'gregsexton/gitv.git'
+
+# 補完
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+# スニペット
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+# indent色分け
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# 括弧を自動で閉じる
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+# status line
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+
+# 行末の半角スペースを可視化
+# :FixWhitespaceで行末半角スペース削除
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# vim で shell
+[[plugins]]
+repo = 'Shougo/vimshell'
+
+# 差分を表示
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# nerd tree 表示
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+# 一気にコメントアウト
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# php doc comment
+[[plugins]]
+repo = 'vim-scripts/PDV--phpDocumentor-for-Vim'
+
+# vdebug
+# [[plugins]]
+# repo = 'joonty/vdebug'
+
+# colorscheme solarized
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+## fzf
+[[plugins]]
+repo = 'junegunn/fzf' ##, { 'dir': '~/.fzf', 'do': './install --all' }
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+# 多機能セレクタ
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+# CtrlPの拡張プラグイン. 関数検索
+[[plugins]]
+repo = 'tacahiroy/ctrlp-funky'
+# CtrlPの拡張プラグイン. コマンド履歴検索
+[[plugins]]
+repo = 'suy/vim-ctrlp-commandline'
+
+# プレビュー用
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+# markdownのsyntax hilight
+[[plugins]]
+repo = 'kannokanno/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# emmet-vim
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+# syntax check
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+#fで検索後移動できるようにする
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+# enterで整形設定に行くようにする
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+# php manual 見るやつ
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+# [[plugins]]
+# repo = 'joonty/vdebug'
