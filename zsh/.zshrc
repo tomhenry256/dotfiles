@@ -17,6 +17,9 @@ fi
 if [ -e "$zsh_files/prompt.zsh" ]; then
     . $zsh_files/prompt.zsh
 fi
+if [ -e "$zsh_files/.zshrc_local" ]; then
+    . $zsh_files/.zshrc_local
+fi
 
 # include local file
 # attention ! need exec once following command

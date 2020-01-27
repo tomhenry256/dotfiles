@@ -1,5 +1,5 @@
 alias ls='ls -G'
-alias v='vim'
+alias v='\vim'
 alias t='tmux'
 alias e='emacs -nw'
 alias emacs='emacs -nw'

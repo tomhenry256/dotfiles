@@ -276,7 +276,8 @@
 
  syntax on "color code
  set background=dark
- colorscheme solarized
+ " colorscheme solarized
+ colorscheme default
 
  set t_Co=256 " iTerm2など既に256色環境なら無くても良い
  syntax enable

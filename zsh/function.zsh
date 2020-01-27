@@ -59,3 +59,57 @@ function _fgg() {
 }
 zle -N _fgg
 bindkey '^k^l' _fgg
+
+alias git-log-copy='_git_log_copy'
+function _git_log_copy() {
+    # git log --oneline --pretty=format:'[%cd]  %h  %s' --date=format:'%Y/%m/%d %H:%M:%S' | peco --prompt "LOG" | head -n 1 | perl -pe "s/(?<=^.{0}).{22}//g" | pbcopy
+    git log --oneline --pretty=format:'[%cd]  %h  %s' --date=format:'%Y/%m/%d %H:%M:%S' | fzf --reverse | head -n 1 | perl -pe "s/(?<=^.{0}).{22}//g" | pbcopy
+}
+
+alias git-log-show='_git_log_show'
+function _git_log_show() {
+    # git log --oneline --pretty=format:'[%cd]  %h  %s' --date=format:'%Y/%m/%d %H:%M:%S' | peco --prompt "LOG" | head -n 1 | perl -pe "s/(?<=^.{0}).{22}//g" | pbcopy
+    COMMIT_NUMBER=`git log --oneline --pretty=format:'[%cd]  %h  %s' --date=format:'%Y/%m/%d %H:%M:%S' | fzf --reverse | head -n 1 | perl -pe "s/(?<=^.{0}).{23}//g" | cut -c 1-10`
+    git show -p ${COMMIT_NUMBER}
+}
+
+
+function lvim() {
+    file_and_line=$1
+    line=`echo $file_and_line | awk -F ':' '{print $2}'`
+    file=`echo $file_and_line | awk -F ':' '{print $1}'`
+    vim $file +$line
+}
+
+function lpvim() {
+    file_and_line=`pbpaste`
+    line=`echo $file_and_line | awk -F ':' '{print $2}'`
+    file=`echo $file_and_line | awk -F ':' '{print $1}'`
+    vim $file +$line
+}
+
+function fvim() {
+    vim $(fzf)
+}
+
+
+
+function docker_exec() {
+    container_name=`docker ps --format "table {{.Names}}" | sed -e '1d' | fzf` ; docker exec -it $container_name bash
+}
+
+function docker_stop() {
+    container_name=$1
+    if [ "$container_name" = "" ] ; then
+        container_name=`docker ps --format "table {{.Names}}" | sed -e '1d' | fzf`
+    fi
+    docker stop $container_name
+}
+
+function docker_rm() {
+    container_name=$1
+    if [ "$container_name" = "" ] ; then
+        container_name=`docker ps -a --format "table {{.Names}}" | sed -e '1d' | fzf`
+    fi
+    docker rm $container_name
+}
